@@ -89,6 +89,10 @@ resource "docker_container" "nginx" {
 
 1.8
 
-force_remove (Boolean) If true, then the image is removed forcibly when the resource is destroyed.
+keep_locally (Boolean) If true, then the Docker image won't be deleted on destroy operation. 
 
-В нашем коде данной команды нет. Поэтому docker образ остался.
+If this is false, it will delete the image from the docker local storage on destroy operation.
+
+В этой строчке причина того, что образ не удален. 
+
+keep_locally = true установлено в нашем случае.
